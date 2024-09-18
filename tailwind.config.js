@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      rotate: {
+        "x-180": "rotateX(180deg)", // Adding a 3D rotation on the X-axis
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

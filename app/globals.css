@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.custom-cursor {
+  cursor: url("/assets/icons/white-arrow.png"), auto;
+}

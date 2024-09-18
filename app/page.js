@@ -1,101 +1,131 @@
+"use client";
+
 import Image from "next/image";
+import { Tabs } from "@/components/ui/tabs/tabs";
+import { motion } from "framer-motion";
+import Carousel from "@/components/ui/carousel/carousel";
+export default function TabsDemo() {
+  const tabs = [
+    {
+      title: "Platic Injection Moulding",
+      value: "plastic",
+      content: (
+        // <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className="p-2 bg-purple-700 rounded-2xl">
+          <div className=" text-3xl font-extrabold  text-white absolute z-20 break-words max-w-[50%] m-20 ">
+            Some sample text here, i need to apply gradient or use grids
+          </div>
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <Image
+            src="/assets/images/machine1.jpg "
+            alt="pim"
+            width="1000"
+            height="1000"
+            className="object-cover rounded-xl mx-auto "
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        // </div>
+      ),
+    },
+    {
+      title: "Insert molding",
+      value: "insert",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+          <p>Insert tab</p>
+          <DummyContent />
+        </div>
+      ),
+    },
+    {
+      title: "Overmolding",
+      value: "over",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+          <p>Over tab</p>
+          <DummyContent />
+        </div>
+      ),
+    },
+    {
+      title: "Liquid silicone rubber molding",
+      value: "lsr",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+          <p>Lsr tab</p>
+          <DummyContent />
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <div className="flex flex-col items-center mt-16  ">
+      <div
+        className=" border-b-[1px] border-white relative w-full h-96 md:h-[75vh]  overflow-hidden custom-cursor"
+        onClick={() => {
+          const targetSection = document.getElementById("target-section");
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+      >
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <source src="/assets/vids/cnc.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className=" ml-6 relative z-10 flex items-center justify-start h-full text-white">
+          <h1 className="text-4xl md:text-7xl font-bold ">
+            <div className="mb-6">We Manufacture </div>
+            <div>to support innovation!</div>
+          </h1>
+        </div>
+        <div id="target-section"></div>
+      </div>
+      <div className=" mt-14 w-full text-5xl p-5">Our Services:</div>
+      <div className="w-full h-auto flex flex-row items-start justify-between p-6 text-2xl ">
+        <div className="flex flex-col border-white border-[1px] gap-8 p-8 ">
+          <div>Mould Trail</div>
+          {/* <div>Mass Production</div> */}
+          {/* <div>Design Consultancy</div>
+          <div>Mould Manufacturing</div> */}
+        </div>
+        <div className="flex flex-col border-white border-[1px] gap-8 p-8">
+          <div>Mass Production</div>
+        </div>
+        <div className="flex flex-col border-white border-[1px] gap-8 p-8">
+          <div>Design Consultancy</div>
+        </div>
+        <div className="flex flex-col border-white border-[1px] gap-8 p-8">
+          <div>Mould Manufacturing</div>
+        </div>
+      </div>
+      <div className=" w-full  mt-8 ">
+        <Carousel />
+      </div>
+
+      {/* <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
+        <div className="text-3xl font-semibold mb-4">Our Services</div>
+        <Tabs tabs={tabs} />
+      </div> */}
     </div>
   );
 }
+
+const DummyContent = () => {
+  return (
+    <Image
+      // src="/linear.webp"
+      alt="dummy image"
+      width="1000"
+      height="1000"
+      className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+    />
+  );
+};
