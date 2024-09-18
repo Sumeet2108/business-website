@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import Image from "next/image";
 import { Tabs } from "@/components/ui/tabs/tabs";
 import { motion } from "framer-motion";
@@ -81,31 +81,44 @@ export default function TabsDemo() {
           Your browser does not support the video tag.
         </video>
         <div className=" ml-6 relative z-10 flex items-center justify-start h-full text-white">
-          <h1 className="text-4xl md:text-7xl font-bold ">
+          <h1 className="text-3xl md:text-7xl font-bold ">
             <div className="mb-6">We Manufacture </div>
             <div>to support innovation!</div>
           </h1>
         </div>
         <div id="target-section"></div>
       </div>
-      <div className=" mt-14 w-full text-5xl p-5">Our Services:</div>
-      <div className="w-full h-auto flex flex-row items-start justify-between p-6 text-2xl ">
-        <div className="flex flex-col border-white border-[1px] gap-8 p-8 ">
-          <div>Mould Trail</div>
-          {/* <div>Mass Production</div> */}
-          {/* <div>Design Consultancy</div>
-          <div>Mould Manufacturing</div> */}
-        </div>
-        <div className="flex flex-col border-white border-[1px] gap-8 p-8">
-          <div>Mass Production</div>
-        </div>
-        <div className="flex flex-col border-white border-[1px] gap-8 p-8">
-          <div>Design Consultancy</div>
-        </div>
-        <div className="flex flex-col border-white border-[1px] gap-8 p-8">
-          <div>Mould Manufacturing</div>
-        </div>
+      <div className="mt-14 w-full text-5xl p-5 text-center md:text-left">
+        Our Services:
       </div>
+
+      <div className="w-full h-auto grid grid-cols-1 md:grid-cols-4 gap-5 p-6 text-2xl">
+        <Link
+          href={"/mould-trial"}
+          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
+        >
+          <div>Mould Trial</div>
+        </Link>
+        <Link
+          href={"/mass-production"}
+          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
+        >
+          <div>Mass Production</div>
+        </Link>
+        <Link
+          href={"/design-consultancy"}
+          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
+        >
+          <div>Design Consultancy</div>
+        </Link>
+        <Link
+          href={"/mould-manufacturing"}
+          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
+        >
+          <div>Mould Manufacturing</div>
+        </Link>
+      </div>
+
       <div className=" w-full  mt-8 ">
         <Carousel />
       </div>

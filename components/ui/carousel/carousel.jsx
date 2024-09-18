@@ -72,9 +72,9 @@ const Carousel = () => {
               className=""
             />
             {index === currentIndex && (
-              <div className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 text-white text-center">
-                <h2 className="text-4xl font-bold">{image.text}</h2>
-                <p className="mt-2 text-lg">{image.paragraph}</p>
+              <div className="absolute bottom-1/4 md:bottom-1/3 left-1/2 transform -translate-x-1/2 text-white text-center px-4">
+                <h2 className="text-2xl md:text-4xl font-bold">{image.text}</h2>
+                <p className="mt-1 text-sm md:text-lg">{image.paragraph}</p>
               </div>
             )}
           </div>
@@ -83,14 +83,14 @@ const Carousel = () => {
 
       <button
         onClick={prevImage}
-        className="absolute left-0 top-0 h-full w-28 bg-transparent text-white text-4xl flex items-center justify-center"
+        className="absolute left-0 top-0 h-full w-14 md:w-28 bg-transparent text-white text-3xl md:text-4xl flex items-center justify-center"
       >
         &#10094; {/* Left Arrow */}
       </button>
 
       <button
         onClick={nextImage}
-        className="absolute right-0 top-0 h-full w-28 bg-transparent text-white text-4xl flex items-center justify-center"
+        className="absolute right-0 top-0 h-full w-14 md:w-28 bg-transparent text-white text-3xl md:text-4xl flex items-center justify-center"
       >
         &#10095; {/* Right Arrow */}
       </button>
@@ -99,7 +99,7 @@ const Carousel = () => {
         {images.map((_, index) => (
           <div
             key={index}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
               index === currentIndex ? "bg-white" : "bg-gray-400"
             }`}
           />
