@@ -10,12 +10,12 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-white shadow-lg  w-full z-20 fixed top-0">
+    <nav className="bg-white shadow-lg w-full z-20 fixed top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <Link href="/" className=" flex flex-col items-center justify-center">
+          <Link href="/" className="flex flex-col items-center justify-center">
             <motion.span
-              className=" text-2xl  font-extrabold text-black -mb-2"
+              className="text-2xl font-extrabold text-black -mb-2"
               initial={{ rotateY: 0 }}
               whileHover={{ rotateY: 360 }}
               transition={{
@@ -26,7 +26,6 @@ const Navbar = () => {
             >
               AK
             </motion.span>
-
             <div className="text-xs mt-0 text-black">Engineers</div>
           </Link>
 
@@ -35,7 +34,7 @@ const Navbar = () => {
               title="Services"
               items={[
                 "Mass production",
-                "Mould trail",
+                "Mould trial",
                 "Design consultancy",
                 "Mould Manufacturing",
               ]}
@@ -50,7 +49,6 @@ const Navbar = () => {
             <NavItem title="Contact Us" href="/contactus" />
           </div>
 
-          {/* Mobile menu button here*/}
           <div className="flex md:hidden">
             <button onClick={toggleMenu} className="focus:outline-none">
               <motion.div
@@ -70,7 +68,6 @@ const Navbar = () => {
                   }}
                   transition={{ duration: 0.3 }}
                 />
-
                 <motion.span
                   className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-700"
                   variants={{
@@ -79,7 +76,6 @@ const Navbar = () => {
                   }}
                   transition={{ duration: 0.3 }}
                 />
-
                 <motion.span
                   className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-700"
                   variants={{
@@ -94,7 +90,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu is here*/}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -105,8 +100,19 @@ const Navbar = () => {
             className="fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 md:hidden"
           >
             <div className="px-2 pt-4 pb-3 space-y-1 sm:px-3">
-              <MobileNavItem title="Services" />
-              <MobileNavItem title="Portfolio" />
+              <MobileNavItem
+                title="Services"
+                subItems={[
+                  "Mass production",
+                  "Mould trial",
+                  "Design consultancy",
+                  "Mould Manufacturing",
+                ]}
+              />
+              <MobileNavItem
+                title="Portfolio"
+                subItems={["A Project", "B Project"]}
+              />
               <MobileNavItem title="About Us" />
               <MobileNavItem title="Contact Us" />
             </div>
@@ -122,7 +128,7 @@ const NavItem = ({ title, items, href }) => {
 
   return (
     <div
-      className="relative "
+      className="relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -130,7 +136,7 @@ const NavItem = ({ title, items, href }) => {
         href={href || "#"}
         className={`text-gray-700 px-3 py-2 rounded-md text-sm font-medium ${
           title === "Contact Us"
-            ? "hover:bg-[#7020be] hover:text-white"
+            ? "hover:bg-orange-500 hover:text-white"
             : "hover:bg-black hover:text-white"
         }`}
       >
@@ -145,37 +151,62 @@ const NavItem = ({ title, items, href }) => {
             transition={{ duration: 0.2 }}
             className="absolute left-0 mt-5 w-48 bg-white shadow-lg ring-1 ring-black ring-opacity-5"
           >
-            {" "}
-            <DropdownMenu items={items} />{" "}
+            <DropdownMenu items={items} />
           </motion.div>
-        )}{" "}
-      </AnimatePresence>{" "}
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
 const DropdownMenu = ({ items }) => (
   <div className="py-1">
-    {" "}
     {items.map((item, index) => (
       <Link
         key={index}
         href="#"
         className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
       >
-        {" "}
-        {item}{" "}
+        {item}
       </Link>
-    ))}{" "}
+    ))}
   </div>
 );
-const MobileNavItem = ({ title }) => (
-  <Link
-    href="#"
-    className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium"
-  >
-    {" "}
-    {title}{" "}
-  </Link>
-);
+
+const MobileNavItem = ({ title, subItems }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isActive, setIsActive] = useState(false); // Track active state
+
+  const handleClick = () => {
+    setIsExpanded(!isExpanded);
+    setIsActive(!isActive); // Toggle active state
+  };
+
+  return (
+    <div>
+      <button
+        className={`block px-3 py-2 rounded-t-md text-base font-medium w-full text-left transition-colors ${
+          isActive ? "bg-black text-white" : "text-gray-700 hover:bg-gray-100"
+        }`}
+        onClick={handleClick}
+      >
+        {title}
+      </button>
+      <AnimatePresence>
+        {isExpanded && subItems && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="pl-5 bg-gray-100 rounded-b-md border-[1px] border-black"
+          >
+            <DropdownMenu items={subItems} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 export default Navbar;

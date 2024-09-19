@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Tabs } from "@/components/ui/tabs/tabs";
 import { motion } from "framer-motion";
 import Carousel from "@/components/ui/carousel/carousel";
+import Contactform from "@/components/ui/contactform";
 export default function TabsDemo() {
   const tabs = [
     {
@@ -82,8 +83,12 @@ export default function TabsDemo() {
         </video>
         <div className=" ml-6 relative z-10 flex items-center justify-start h-full text-white">
           <h1 className="text-3xl md:text-7xl font-bold ">
-            <div className="mb-6">We Manufacture </div>
-            <div>to support innovation!</div>
+            <div className="mb-6">
+              We <span className="text-orange-500">Manufacture</span>{" "}
+            </div>
+            <div>
+              to support <span className="text-orange-500">innovation!</span>
+            </div>
           </h1>
         </div>
         <div id="target-section"></div>
@@ -122,7 +127,9 @@ export default function TabsDemo() {
       <div className=" w-full  mt-8 ">
         <Carousel />
       </div>
-
+      <div>
+        <Contactform />
+      </div>
       {/* <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
         <div className="text-3xl font-semibold mb-4">Our Services</div>
         <Tabs tabs={tabs} />
