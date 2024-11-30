@@ -1,13 +1,33 @@
 "use client";
-"use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="bg-white shadow-lg w-full z-20 fixed top-0">
@@ -24,25 +44,38 @@ const Navbar = () => {
               }}
               style={{ transformStyle: "preserve-3d" }}
             >
-              AK
+              <img
+                className="w-14"
+                alt="AK logo"
+                src="/assets/images/ak-logo.png"
+              ></img>
             </motion.span>
-            <div className="text-xs mt-0 text-black">Engineers</div>
+            <div className="text-xs mt-2 text-black">Engineers</div>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6 ">
             <NavItem
               title="Services"
               items={[
-                "Mass production",
-                "Mould trial",
-                "Design consultancy",
-                "Mould Manufacturing",
+                { name: "Mass Production", href: "/services/mass-production" },
+                { name: "Mould Trail", href: "/services/mould-trail" },
+                {
+                  name: "Design Consultancy",
+                  href: "/services/design-consultancy",
+                },
+                {
+                  name: "Mould Manufacturing",
+                  href: "/services/mould-manufacturing",
+                },
               ]}
               href="/services"
             />
             <NavItem
               title="Portfolio"
-              items={["A Project", "B Project"]}
+              items={[
+                { name: "A Project", href: "/portfolio/a-project" },
+                { name: "B Project", href: "/portfolio/b-project" },
+              ]}
               href="/portfolio"
             />
             <NavItem title="About Us" href="/about" />
@@ -50,7 +83,11 @@ const Navbar = () => {
           </div>
 
           <div className="flex md:hidden">
-            <button onClick={toggleMenu} className="focus:outline-none">
+            <button
+              ref={buttonRef}
+              onClick={toggleMenu}
+              className="focus:outline-none"
+            >
               <motion.div
                 initial={false}
                 animate={isOpen ? "open" : "closed"}
@@ -93,6 +130,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={menuRef} // Attach the ref to the mobile menu
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
@@ -103,18 +141,30 @@ const Navbar = () => {
               <MobileNavItem
                 title="Services"
                 subItems={[
-                  "Mass production",
-                  "Mould trial",
-                  "Design consultancy",
-                  "Mould Manufacturing",
+                  {
+                    name: "Mass production",
+                    href: "/services/mass-production",
+                  },
+                  { name: "Mould trail", href: "/services/mould-trail" },
+                  {
+                    name: "Design consultancy",
+                    href: "/services/design-consultancy",
+                  },
+                  {
+                    name: "Mould Manufacturing",
+                    href: "/services/mould-manufacturing",
+                  },
                 ]}
               />
               <MobileNavItem
                 title="Portfolio"
-                subItems={["A Project", "B Project"]}
+                subItems={[
+                  { name: "A Project", href: "/portfolio/a-project" },
+                  { name: "B Project", href: "/portfolio/b-project" },
+                ]}
               />
-              <MobileNavItem title="About Us" />
-              <MobileNavItem title="Contact Us" />
+              <MobileNavItem title="About Us" href="/about" />
+              <MobileNavItem title="Contact Us" href="/contactus" />
             </div>
           </motion.div>
         )}
@@ -123,6 +173,69 @@ const Navbar = () => {
   );
 };
 
+// MobileNavItem Component
+const MobileNavItem = ({ title, subItems, href }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = (e) => {
+    if (subItems) {
+      setIsExpanded(!isExpanded);
+      setIsActive(!isActive);
+    } else {
+      window.location.href = href;
+    }
+  };
+
+  return (
+    <div>
+      <button
+        className={`block px-3 py-2 rounded-t-md text-base font-medium w-full text-left transition-colors ${
+          isActive ? "bg-black text-white" : "text-gray-700 hover:bg-gray-100"
+        }`}
+        onClick={handleClick}
+      >
+        {title}
+      </button>
+
+      {subItems ? (
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="pl-5 bg-gray-100 rounded-b-md border-[1px] border-black"
+            >
+              <DropdownMenu items={subItems} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      ) : (
+        // If there are no sub-items, add rounded bottom
+        <div className="rounded-b-md bg-gray-100"></div>
+      )}
+    </div>
+  );
+};
+
+// DropdownMenu Component
+const DropdownMenu = ({ items }) => (
+  <div className="py-1">
+    {items.map((item, index) => (
+      <Link
+        key={index}
+        href={item.href}
+        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+);
+
+// NavItem Component
 const NavItem = ({ title, items, href }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -152,56 +265,6 @@ const NavItem = ({ title, items, href }) => {
             className="absolute left-0 mt-5 w-48 bg-white shadow-lg ring-1 ring-black ring-opacity-5"
           >
             <DropdownMenu items={items} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-const DropdownMenu = ({ items }) => (
-  <div className="py-1">
-    {items.map((item, index) => (
-      <Link
-        key={index}
-        href="#"
-        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
-      >
-        {item}
-      </Link>
-    ))}
-  </div>
-);
-
-const MobileNavItem = ({ title, subItems }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isActive, setIsActive] = useState(false); // Track active state
-
-  const handleClick = () => {
-    setIsExpanded(!isExpanded);
-    setIsActive(!isActive); // Toggle active state
-  };
-
-  return (
-    <div>
-      <button
-        className={`block px-3 py-2 rounded-t-md text-base font-medium w-full text-left transition-colors ${
-          isActive ? "bg-black text-white" : "text-gray-700 hover:bg-gray-100"
-        }`}
-        onClick={handleClick}
-      >
-        {title}
-      </button>
-      <AnimatePresence>
-        {isExpanded && subItems && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="pl-5 bg-gray-100 rounded-b-md border-[1px] border-black"
-          >
-            <DropdownMenu items={subItems} />
           </motion.div>
         )}
       </AnimatePresence>

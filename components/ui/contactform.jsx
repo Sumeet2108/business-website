@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Contactform = () => {
   return (
-    <div className="grid sm:grid-cols-2 items-start gap-16 p-28 mx-auto w-full bg-black font-[sans-serif]">
+    <div className="grid sm:grid-cols-2 items-start gap-16 p-10 md:p-28 mx-auto  bg-black font-[sans-serif]">
       <div>
         <h1 className="text-orange-500 text-3xl font-extrabold">
           Let&apos;s Talk
@@ -32,7 +32,7 @@ const Contactform = () => {
                 </svg>
               </div>
               <a
-                href="javascript:void(0)"
+                href="mailto:info@akengineersplastic.in"
                 className="text-orange-500 text-md ml-4"
               >
                 <small className="block">Mail</small>
@@ -49,7 +49,7 @@ const Contactform = () => {
 
           <ul className="flex mt-4 space-x-4">
             <li className="bg-orange-500 hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-              <a href="javascript:void(0)">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20px"
@@ -77,7 +77,7 @@ const Contactform = () => {
               </svg>
             </li>
             <li className="bg-orange-500 hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-              <a href="javascript:void(0)">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20px"

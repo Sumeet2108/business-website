@@ -9,10 +9,10 @@ const Footer = () => {
             <h4 className="text-3xl fonat-semibold text-white">AK Engineers</h4>
             {/* <h5 className="text-lg mt-0 mb-2 text-slate-600">Our Office</h5> */}
             <div className="mt-2">
-              <div className="w-full mb-4 md:w-1/2 h-72 ">
+              <div className="w-full mb-4 md:w-1/2 h-72  ">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4230.291095493794!2d72.85107896247833!3d19.16196276576265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a93cb59cff%3A0x51db944f3e339549!2sA.K.%20Engineers!5e0!3m2!1sen!2sin!4v1726656935006!5m2!1sen!2sin"
-                  className="w-full h-full border-0"
+                  className="rounded-xl w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -138,8 +138,8 @@ const Footer = () => {
                     </svg>
                   </div>
                   <a
-                    href="javascript:void(0)"
-                    className="text-orange-500 text-md "
+                    href="mailto:info@akengineersplastic.in"
+                    className="text-orange-500 text-md"
                   >
                     <strong className="text-white">
                       info@akengineersplastic.in
@@ -154,7 +154,7 @@ const Footer = () => {
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-white font-semibold py-1">
-              © <span className="text-orange-500">AK</span> Engineers.
+              © <span className="font-semibold">AK</span> Engineers.
             </div>
           </div>
         </div>

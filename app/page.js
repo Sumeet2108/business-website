@@ -61,7 +61,7 @@ export default function TabsDemo() {
   ];
 
   return (
-    <div className="flex flex-col items-center mt-16  ">
+    <div className="flex flex-col items-center mt-16 ">
       <div
         className=" border-b-[1px] border-white relative w-full h-96 md:h-[75vh]  overflow-hidden custom-cursor"
         onClick={() => {
@@ -93,38 +93,38 @@ export default function TabsDemo() {
         </div>
         <div id="target-section"></div>
       </div>
-      <div className="mt-14 w-full text-5xl p-5 text-center md:text-left">
+      <div className="mt-4 w-full text-5xl p-5 text-center md:text-left">
         Our Services:
       </div>
 
       <div className="w-full h-auto grid grid-cols-1 md:grid-cols-4 gap-5 p-6 text-2xl">
         <Link
-          href={"/mould-trial"}
+          href={"services/mould-trail"}
           className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
         >
           <div>Mould Trial</div>
         </Link>
         <Link
-          href={"/mass-production"}
+          href={"services/mass-production"}
           className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
         >
           <div>Mass Production</div>
         </Link>
         <Link
-          href={"/design-consultancy"}
+          href={"services/design-consultancy"}
           className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
         >
           <div>Design Consultancy</div>
         </Link>
         <Link
-          href={"/mould-manufacturing"}
+          href={"services/mould-manufacturing"}
           className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
         >
           <div>Mould Manufacturing</div>
         </Link>
       </div>
 
-      <div className=" w-full  mt-8 ">
+      <div className=" w-full  mt-4 ">
         <Carousel />
       </div>
       <div>
