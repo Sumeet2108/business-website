@@ -57,8 +57,8 @@ const Navbar = () => {
             <NavItem
               title="Services"
               items={[
-                { name: "Mass Production", href: "/services/mass-production" },
                 { name: "Mould Trail", href: "/services/mould-trail" },
+                { name: "Mass Production", href: "/services/mass-production" },
                 {
                   name: "Design Consultancy",
                   href: "/services/design-consultancy",
@@ -130,7 +130,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            ref={menuRef} // Attach the ref to the mobile menu
+            ref={menuRef}
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
@@ -141,11 +141,11 @@ const Navbar = () => {
               <MobileNavItem
                 title="Services"
                 subItems={[
+                  { name: "Mould Trail", href: "/services/mould-trail" },
                   {
                     name: "Mass production",
                     href: "/services/mass-production",
                   },
-                  { name: "Mould trail", href: "/services/mould-trail" },
                   {
                     name: "Design consultancy",
                     href: "/services/design-consultancy",
