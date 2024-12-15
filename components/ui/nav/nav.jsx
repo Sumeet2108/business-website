@@ -68,7 +68,7 @@ const Navbar = () => {
                   href: "/services/mould-manufacturing",
                 },
               ]}
-              href="/services"
+              // href="/services"
             />
             <NavItem
               title="Portfolio"
@@ -76,7 +76,7 @@ const Navbar = () => {
                 { name: "A Project", href: "/portfolio/a-project" },
                 { name: "B Project", href: "/portfolio/b-project" },
               ]}
-              href="/portfolio"
+              // href="/portfolio"
             />
             <NavItem title="About Us" href="/about" />
             <NavItem title="Contact Us" href="/contactus" />
