@@ -91,26 +91,6 @@ const MouldTrailPage = () => {
             </span>
           </li>
         </ul>
-
-        {/* Image Section
-        <div className="mt-12 flex flex-col md:flex-row justify-center gap-8">
-          <div className="w-full md:w-[500px] h-[300px] relative">
-            <Image
-              src="/assets/images/mouldtrail1.jpg"
-              alt="Mould trial process"
-              layout="fill"
-              className="rounded-lg shadow-lg"
-            />
-          </div>
-          <div className="w-full md:w-[500px] h-[300px] relative">
-            <Image
-              src="/assets/images/mouldtrail2.jpg"
-              alt="Mould testing and production"
-              layout="fill"
-              className="rounded-lg shadow-lg"
-            />
-          </div>
-        </div> */}
       </div>
     </section>
   );
