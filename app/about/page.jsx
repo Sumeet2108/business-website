@@ -62,7 +62,7 @@ const AboutPage = () => {
       <div className=" px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:space-x-6 mt-8 w-full justify-center">
         <div className="mb-6 sm:mb-0 w-full sm:w-auto">
           <Image
-            src="/assets/images/machine1.jpg"
+            src="/assets/images/machines.jpg"
             height={800}
             width={600}
             className="object-contain w-full"
@@ -71,7 +71,7 @@ const AboutPage = () => {
         </div>
         <div className="mb-6 sm:mb-0 w-full sm:w-auto">
           <Image
-            src="/assets/images/machine2.jpg"
+            src="/assets/images/crates.jpg"
             height={800}
             width={800}
             className="object-contain w-full"
@@ -80,7 +80,7 @@ const AboutPage = () => {
         </div>
         <div className="w-full sm:w-auto">
           <Image
-            src="/assets/images/machine2.jpg"
+            src="/assets/images/crates.jpg"
             height={800}
             width={800}
             className="object-contain w-full"
