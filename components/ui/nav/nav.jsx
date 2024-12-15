@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -238,6 +239,7 @@ const DropdownMenu = ({ items }) => (
 // NavItem Component
 const NavItem = ({ title, items, href }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const isClickable = Boolean(href);
 
   return (
     <div
@@ -245,16 +247,29 @@ const NavItem = ({ title, items, href }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Link
-        href={href || "#"}
-        className={`text-gray-700 px-3 py-2 rounded-md text-sm font-medium ${
-          title === "Contact Us"
-            ? "hover:bg-orange-500 hover:text-white"
-            : "hover:bg-black hover:text-white"
-        }`}
-      >
-        {title}
-      </Link>
+      {isClickable ? (
+        <Link
+          href={href || "#"}
+          className={`text-gray-700 px-3 py-2 rounded-md text-sm font-medium ${
+            title === "Contact Us"
+              ? "hover:bg-orange-500 hover:text-white"
+              : "hover:bg-black hover:text-white"
+          }`}
+        >
+          {title}
+        </Link>
+      ) : (
+        // For non-clickable items, render a span instead of Link
+        <span
+          className={`text-gray-700 px-3 py-2 rounded-md text-sm font-medium ${
+            title === "Contact Us"
+              ? "text-gray-700 hover:bg-orange-500 hover:text-white"
+              : "text-gray-700 hover:bg-black hover:text-white"
+          }`}
+        >
+          {title}
+        </span>
+      )}
       <AnimatePresence>
         {isHovered && items && (
           <motion.div
