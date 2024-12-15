@@ -84,7 +84,7 @@ const MouldManufacturingPage = () => {
       <div className=" flex items-start justify-start max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10 ">
         <ul className="space-y-6 text-left max-w-3xl mx-auto text-black">
           {dropdownContent.map((item, index) => (
-            <li className="text-lg sm:text-xl  cursor-default">
+            <li key={index} className="text-lg sm:text-xl  cursor-default">
               <strong className="underline">{item.title}:</strong>
               <br />
               <span className="text-base">{item.content}</span>
