@@ -2,9 +2,12 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // Import usePathname to get the current path
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // Track if scrolled
+  const pathname = usePathname();
 
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
@@ -12,26 +15,31 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target)
-      ) {
-        setIsOpen(false);
-      }
+    if (pathname !== "/") return;
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
+
+  const isHomePage = pathname === "/"; // Check if current path is home
 
   return (
-    <nav className="bg-white shadow-lg w-full z-20 fixed top-0">
+    <nav
+      className={`transition-colors duration-300 ease-in-out w-full z-20 fixed top-0 ${
+        isHomePage // Apply scroll effect only on homepage
+          ? isScrolled
+            ? "bg-white shadow-lg"
+            : "bg-transparent"
+          : "bg-white border-b-[1px] border-gray-300 " // Default to white background on other pages
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <Link href="/" className="flex flex-col items-center justify-center">
@@ -51,7 +59,13 @@ const Navbar = () => {
                 src="/assets/images/ak-logo.png"
               ></img>
             </motion.span>
-            <div className="text-xs mt-2 text-black">Engineers</div>
+            <div
+              className={`text-xs mt-2 ${
+                isHomePage && !isScrolled ? "text-white" : "text-black"
+              }`}
+            >
+              Engineers
+            </div>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6 ">
@@ -69,18 +83,27 @@ const Navbar = () => {
                   href: "/services/mould-manufacturing",
                 },
               ]}
-              // href="/services"
+              isHomePage={isHomePage}
+              isScrolled={isScrolled}
             />
             <NavItem
               title="Portfolio"
-              items={[
-                { name: "A Project", href: "/portfolio/a-project" },
-                { name: "B Project", href: "/portfolio/b-project" },
-              ]}
-              // href="/portfolio"
+              href="/portfolio"
+              isHomePage={isHomePage}
+              isScrolled={isScrolled}
             />
-            <NavItem title="About Us" href="/about" />
-            <NavItem title="Contact Us" href="/contactus" />
+            <NavItem
+              title="About Us"
+              href="/about"
+              isHomePage={isHomePage}
+              isScrolled={isScrolled}
+            />
+            <NavItem
+              title="Contact Us"
+              href="/contact-us"
+              isHomePage={isHomePage}
+              isScrolled={isScrolled}
+            />
           </div>
 
           <div className="flex md:hidden">
@@ -165,7 +188,7 @@ const Navbar = () => {
                 ]}
               />
               <MobileNavItem title="About Us" href="/about" />
-              <MobileNavItem title="Contact Us" href="/contactus" />
+              <MobileNavItem title="Contact Us" href="/contact-us" />
             </div>
           </motion.div>
         )}
@@ -214,7 +237,6 @@ const MobileNavItem = ({ title, subItems, href }) => {
           )}
         </AnimatePresence>
       ) : (
-        // If there are no sub-items, add rounded bottom
         <div className="rounded-b-md bg-gray-100"></div>
       )}
     </div>
@@ -237,7 +259,7 @@ const DropdownMenu = ({ items }) => (
 );
 
 // NavItem Component
-const NavItem = ({ title, items, href }) => {
+const NavItem = ({ title, items, href, isHomePage, isScrolled }) => {
   const [isHovered, setIsHovered] = useState(false);
   const isClickable = Boolean(href);
 
@@ -250,22 +272,23 @@ const NavItem = ({ title, items, href }) => {
       {isClickable ? (
         <Link
           href={href || "#"}
-          className={`text-gray-700 px-3 py-2 rounded-md text-sm font-medium ${
+          className={`${
+            isHomePage && !isScrolled
+              ? "text-white" // Make text white on the homepage when not scrolled
+              : "text-gray-700"
+          } px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             title === "Contact Us"
               ? "hover:bg-orange-500 hover:text-white"
               : "hover:bg-black hover:text-white"
-          }`}
+          } ${isHomePage && !isScrolled ? "hover:bg-transparent" : ""}`}
         >
           {title}
         </Link>
       ) : (
-        // For non-clickable items, render a span instead of Link
         <span
-          className={`text-gray-700 px-3 py-2 rounded-md text-sm font-medium ${
-            title === "Contact Us"
-              ? "text-gray-700 hover:bg-orange-500 hover:text-white"
-              : "text-gray-700 hover:bg-black hover:text-white"
-          }`}
+          className={`${
+            isHomePage && !isScrolled ? "text-white" : "text-gray-700"
+          } px-3 py-2 rounded-md text-sm font-medium`}
         >
           {title}
         </span>

@@ -61,7 +61,7 @@ export default function TabsDemo() {
   ];
 
   return (
-    <div className="flex flex-col items-center mt-16 ">
+    <div className="flex flex-col items-center  ">
       <div
         className=" border-b-[1px] border-white relative w-full h-96 md:h-[75vh]  overflow-hidden custom-cursor"
         onClick={() => {
@@ -84,10 +84,10 @@ export default function TabsDemo() {
         <div className=" ml-6 relative z-10 flex items-center justify-start h-full text-white">
           <h1 className="text-3xl md:text-7xl font-bold ">
             <div className="mb-6">
-              We <span className="text-orange-500">Manufacture</span>{" "}
+              We <span className="text-[#FFA500]">Manufacture</span>{" "}
             </div>
             <div>
-              to support <span className="text-orange-500">innovation!</span>
+              to support <span className="text-[#FFA500]">innovation!</span>
             </div>
           </h1>
         </div>

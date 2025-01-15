@@ -1,11 +1,43 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
+const apiUrl = process.env.NEXT_PUBLIC_URL;
 
 const Contactform = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (formData) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      // Display a success message
+      alert("Your message has been sent!");
+    } catch (error) {
+      // Handle error
+      alert("Error: " + error.message);
+    }
+  };
+
   return (
     <div className="grid sm:grid-cols-2 items-start gap-16 p-10 md:p-28 mx-auto  bg-black font-[sans-serif]">
       <div>
-        <h1 className="text-orange-500 text-3xl font-extrabold">
+        <h1 className="text-[#FFA500] text-3xl font-extrabold">
           Let&apos;s Talk
         </h1>
         <p className="text-sm text-white mt-4">
@@ -17,7 +49,7 @@ const Contactform = () => {
           <h2 className="text-white text-base font-bold">Email</h2>
           <ul className="mt-4">
             <li className="flex items-center">
-              <div className="bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+              <div className="bg-[#FFA500] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20px"
@@ -33,7 +65,7 @@ const Contactform = () => {
               </div>
               <a
                 href="mailto:info@akengineersplastic.in"
-                className="text-orange-500 text-md ml-4"
+                className="text-[#FFA500] text-md ml-4"
               >
                 <small className="block">Mail</small>
                 <strong className="text-white">
@@ -48,7 +80,7 @@ const Contactform = () => {
           <h2 className="text-white text-base font-bold">Socials</h2>
 
           <ul className="flex mt-4 space-x-4">
-            <li className="bg-orange-500 hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+            <li className="bg-[#FFA500] hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
               <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +97,7 @@ const Contactform = () => {
               </a>
             </li>
 
-            <li className="bg-orange-500 hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+            <li className="bg-[#FFA500] hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20px"
@@ -76,7 +108,7 @@ const Contactform = () => {
                 <path d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.523zm0 0" />
               </svg>
             </li>
-            <li className="bg-orange-500 hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+            <li className="bg-[#FFA500] hover:bg-orange-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
               <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -93,37 +125,76 @@ const Contactform = () => {
         </div>
       </div>
 
-      <form className="ml-auto space-y-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        className="ml-auto space-y-4"
+      >
+        <div>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
+            {...register("name", { required: "Name is required" })}
+          />
+          {errors.name && (
+            <p className="text-red-500 text-xs">{errors.name.message}</p>
+          )}
+        </div>
+
+        <div>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                message: "Please enter a valid email address",
+              },
+            })}
+          />
+          {errors.email && (
+            <p className="text-red-500 text-xs">{errors.email.message}</p>
+          )}
+        </div>
         <input
-          type="text"
-          placeholder="Name"
-          className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-orange-500 focus:bg-white"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-orange-500 focus:bg-white"
-        />
-        <input
+          id="company"
+          name="company"
           type="text"
           placeholder="Company name (optional)"
-          className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-orange-500 focus:bg-white"
+          className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
+          {...register("company")}
         />
         <input
+          id="phone_no"
+          name="Phone_no"
           type="text"
           placeholder="Phone number"
-          className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-orange-500 focus:bg-white"
+          className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
+          {...register("phone_no", { required: "Phone no. is required" })}
         />
-
-        <textarea
-          placeholder="Message"
-          rows="6"
-          className="resize-none w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-orange-500 focus:bg-white"
-        ></textarea>
+        <div>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            rows="6"
+            className="resize-none w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-[#FFA500] focus:bg-white"
+            {...register("description", { required: "Message is required" })}
+          ></textarea>
+          {errors.description && (
+            <p className="text-red-500 text-xs">{errors.description.message}</p>
+          )}
+        </div>
         <button
-          type="button"
-          rows="3"
-          className="text-white bg-orange-500 hover:bg-orange-600 tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6"
+          type="submit"
+          className="text-white bg-[#FFA500] hover:bg-orange-600 tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6"
         >
           Send
         </button>
