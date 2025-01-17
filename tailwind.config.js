@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,13 +11,27 @@ module.exports = {
   theme: {
     extend: {
       rotate: {
-        "x-180": "rotateX(180deg)", // Adding a 3D rotation on the X-axis
+        "x-180": "rotateX(180deg)",
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        marquee: "marquee 25s linear infinite",
+        marquee2: "marquee2 25s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
     },
   },
   plugins: [],
-};
+});
