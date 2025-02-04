@@ -1,11 +1,11 @@
 import React from "react";
-
-const page = () => {
+import ServicesCardGrid from "@/components/servicesCardGrid";
+const ServicesPage = () => {
   return (
-    <div className="flex flex-col mt-28 items-center  ">
-      <div>page</div>
+    <div className="flex h-full bg-white flex-col mt-18 items-center">
+      <ServicesCardGrid />
     </div>
   );
 };
 
-export default page;
+export default ServicesPage;

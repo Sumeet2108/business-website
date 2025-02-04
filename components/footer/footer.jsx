@@ -67,6 +67,9 @@ const Footer = () => {
 
           {/* Right Section: Links */}
           <div className="top-0 w-1/2 md:w-1/5">
+            <p className="text-xs mb-2">
+              demologos(gotta change for prod here #1):
+            </p>
             {/* marquee*/}
             {/* <div>Our Clients:</div> */}
             <Marquee className="" autoFill="true">
@@ -96,7 +99,7 @@ const Footer = () => {
                 >
                   Portfolio
                 </Link>
-                <Link href="/faqs" className="text-white hover:underline">
+                <Link href="/faq" className="text-white hover:underline">
                   FAQs
                 </Link>
               </div>
@@ -117,7 +120,7 @@ const Footer = () => {
                 >
                   Privacy Policy
                 </Link>
-                <Link href="/contact" className="text-white hover:underline">
+                <Link href="/contact-us" className="text-white hover:underline">
                   Contact Us
                 </Link>
               </div>
@@ -125,7 +128,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divi */}
+        {/* Divi line*/}
         <hr className="my-5 border-gray-300" />
 
         {/* Copyright and GST */}
@@ -134,7 +137,7 @@ const Footer = () => {
             &copy; AK Engineers
           </div>
           <div className="text-sm text-white text-center md:text-right">
-            GST No: 1234567890
+            GST No: 1234567890 (change in prod #2)
           </div>
         </div>
       </div>

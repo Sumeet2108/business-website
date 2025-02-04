@@ -71,6 +71,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6 ">
             <NavItem
               title="Services"
+              href="/services"
               items={[
                 { name: "Mould Trail", href: "/services/mould-trail" },
                 { name: "Mass Production", href: "/services/mass-production" },
@@ -250,7 +251,7 @@ const DropdownMenu = ({ items }) => (
       <Link
         key={index}
         href={item.href}
-        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-orange-600"
       >
         {item.name}
       </Link>
