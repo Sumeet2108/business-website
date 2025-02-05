@@ -15,17 +15,24 @@ const PrivacyPage = () => {
             <div>
               <ul className="text-gray-900 text-xl  pl-6">
                 <li className="mb-5">
-                  <div className="font-bold">Data Collection:</div> We collect
-                  user information such as name, email, and phone number when
-                  you fill out contact forms or place an order.
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Data Collection:
+                  </div>{" "}
+                  We collect user information such as name, email, and phone
+                  number when you fill out contact forms or place an order.
                 </li>
                 <li className="mb-5">
-                  <div className="font-bold">Data Usage:</div> Your information
-                  is used only to fulfill orders and improve our services.
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Data Usage:
+                  </div>{" "}
+                  Your information is used only to fulfill orders and improve
+                  our services.
                 </li>
                 <li className="mb-5">
-                  <div className="font-bold">Data Security:</div>We use
-                  industry-standard encryption to protect your personal
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Data Security:
+                  </div>
+                  We use industry-standard encryption to protect your personal
                   information.
                 </li>
               </ul>

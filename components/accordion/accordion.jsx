@@ -14,11 +14,18 @@ const Accordion = ({ data }) => {
           onClick={() => handleAccordionToggle(index)}
           key={index}
           className={` w-full text-left accordion py-8 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl ${
-            activeIndex === index ? "bg-orange-50" : "hover:bg-orange-50"
+            activeIndex === index
+              ? "bg-orange-50 text-orange-600"
+              : "hover:bg-orange-50"
           }`}
         >
-          <div className=" group inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left hover:text-orange-600">
-            <h5 className="text-xl font-semibold">{faq.question}</h5>
+          <div
+            className={`group inline-flex items-center justify-between leading-8  w-full transition duration-500 text-left hover:text-orange-600
+              ${activeIndex === index ? " text-orange-600" : "text-gray-900"}`}
+          >
+            <h5 className=" text-xl md:text-2xl font-semibold">
+              {faq.question}
+            </h5>
             <svg
               className={`text-gray-500 transition duration-500 group-hover:text-orange-600 ${
                 activeIndex === index ? "rotate-180" : ""
@@ -45,7 +52,9 @@ const Accordion = ({ data }) => {
               transition: "max-height 0.2s ease-out",
             }}
           >
-            <p className="text-base text-gray-900 leading-6">{faq.answer}</p>
+            <p className=" mt-1 text-base md:text-lg text-gray-900 leading-6">
+              {faq.answer}
+            </p>
           </div>
         </div>
       ))}

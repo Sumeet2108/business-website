@@ -51,8 +51,8 @@ const ServicesCardGrid = () => {
               Mould Trial&gt;
             </h4>
             <p className="text-gray-900  text-sm md:text-base">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste,
-              recusandae! Pariatur quidem a, voluptates quos.
+              Ensure flawless production with our expert mould trial services
+              today.
             </p>
           </div>
 
@@ -75,15 +75,15 @@ const ServicesCardGrid = () => {
               Mass Production&gt;
             </h4>
             <p className="text-gray-900  text-sm md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-              debitis beatae. Est ipsum voluptate consectetur labore?
+              Reliable and scalable mass production solutions for high-quality
+              manufacturing.
             </p>
           </div>
 
           {/* Card 3 */}
           <div
             className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
-            onClick={() => router.push("/services/design-consultancy")}
+            onClick={() => router.push("/services/custom-product-development")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
               <svg
@@ -96,11 +96,11 @@ const ServicesCardGrid = () => {
               </svg>
             </div>
             <h4 className="font-semibold text-xl text-dark mb-3">
-              Design Consultancy&gt;
+              Custom Product Development&gt;
             </h4>
             <p className="text-gray-900  text-sm md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-              veniam consequatur sunt impedit dolorem illo id
+              Transform ideas into reality with our expert custom product
+              development services for injection moulded parts.
             </p>
           </div>
 
@@ -123,8 +123,8 @@ const ServicesCardGrid = () => {
               Mould Manufacturing&gt;
             </h4>
             <p className="text-gray-900  text-sm md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consectetur ea fuga veritatis minus illo quis hic eveniet
+              Precision-engineered mould manufacturing for seamless and
+              efficient production.
             </p>
           </div>
         </div>

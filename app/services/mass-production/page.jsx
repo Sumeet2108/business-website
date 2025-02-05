@@ -43,47 +43,47 @@ const MassProd = () => {
           <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">Scalable Manufacturing Solutions:</strong>
             <br />
-            <span className="text-base ">
+            <span className="text-base  md:text-lg ">
               Flexible production setups to meet both small and large batch
               requirements.
             </span>
           </li>
-          <li className="text-lg sm:text-xl  cursor-default">
+          {/* <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">Complex Mould Design Support:</strong>
             <br />
             <span className="text-base ">
               Expertise in designing moulds with complex geometries, undercuts,
               and multi-cavity configurations.
             </span>
-          </li>
-          <li className="text-lg sm:text-xl  cursor-default">
+          </li> */}
+          {/* <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">Advanced Automation:</strong>
             <br />
             <span className="text-base ">
               Automated systems and machinery to streamline processes and reduce
               lead times.
             </span>
-          </li>
+          </li> */}
           <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">Quality Control at Scale:</strong>
             <br />
-            <span className="text-base ">
-              High-accuracy moulds for intricate parts requiring precise
-              dimensions and tolerances.
+            <span className="text-base  md:text-lg ">
+              Rigorous inspection process ensure quality across every unit in
+              high-volume production.
             </span>
           </li>
-          <li className="text-lg sm:text-xl  cursor-default">
+          {/* <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">Quick Turnaround & Delivery:</strong>
             <br />
             <span className="text-base ">
               Rigorous inspection processes ensure quality across every unit in
               high-volume production.
             </span>
-          </li>
+          </li> */}
           <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">Optimized Lead Times:</strong>
             <br />
-            <span className="text-base ">
+            <span className="text-base  md:text-lg ">
               Fast turnaround from design to delivery for time-sensitive
               projects.
             </span>
@@ -91,7 +91,7 @@ const MassProd = () => {
           <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">Cost-Efficiency for Large Orders:</strong>
             <br />
-            <span className="text-base ">
+            <span className="text-base  md:text-lg ">
               Competitive pricing structures for bulk production, reducing
               per-unit cost.
             </span>
@@ -99,7 +99,7 @@ const MassProd = () => {
           <li className="text-lg sm:text-xl  cursor-default">
             <strong className="">End-to-End Support:</strong>
             <br />
-            <span className="text-base ">
+            <span className="text-base  md:text-lg ">
               Comprehensive service from material selection through to final
               product delivery.
             </span>

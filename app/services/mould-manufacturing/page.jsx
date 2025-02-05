@@ -35,11 +35,11 @@ const MouldManufacturingPage = () => {
       content:
         "High-accuracy moulds for intricate parts requiring precise dimensions and tolerances.",
     },
-    {
-      title: "Quick Turnaround & Delivery",
-      content:
-        "Fast lead times and reliable delivery schedules to meet your project timelines.",
-    },
+    // {
+    //   title: "Quick Turnaround & Delivery",
+    //   content:
+    //     "Fast lead times and reliable delivery schedules to meet your project timelines.",
+    // },
     {
       title: "Tool Maintenance & Repair",
       content:
@@ -85,9 +85,9 @@ const MouldManufacturingPage = () => {
         <ul className="space-y-6 text-left max-w-3xl mx-auto text-black">
           {dropdownContent.map((item, index) => (
             <li key={index} className="text-lg sm:text-xl  cursor-default">
-              <strong className="underline">{item.title}:</strong>
+              <strong className="">{item.title}:</strong>
               <br />
-              <span className="text-base">{item.content}</span>
+              <span className="text-base  md:text-lg">{item.content}</span>
             </li>
           ))}
         </ul>

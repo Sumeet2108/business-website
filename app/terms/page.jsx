@@ -15,28 +15,40 @@ const TermsPage = () => {
             <div>
               <ul className="text-gray-900 text-xl  pl-6">
                 <li className="mb-5">
-                  <div className="font-bold">Agreement:</div> By accessing and
-                  using our website, you agree to comply with these terms.
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Agreement:
+                  </div>{" "}
+                  By accessing and using our website, you agree to comply with
+                  these terms.
                 </li>
                 <li className="mb-5">
-                  <div className="font-bold">Orders and Payments:</div> All
-                  orders are subject to approval. Payment terms will be
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Orders and Payments:
+                  </div>{" "}
+                  All orders are subject to approval. Payment terms will be
                   specified at the time of order confirmation.
                 </li>
                 <li className="mb-5">
-                  <div className="font-bold">Intellectual Property:</div> All
-                  website content, including images, text, and designs, is the
-                  property of A.K. Engineers.
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Intellectual Property:
+                  </div>{" "}
+                  All website content, including images, text, and designs, is
+                  the property of A.K. Engineers.
                 </li>
                 <li className="mb-5">
-                  <div className="font-bold">Liability:</div> We are not
-                  responsible for delays caused by unforeseen circumstances,
-                  such as supply chain issues or natural disasters.
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Liability:
+                  </div>{" "}
+                  We are not responsible for delays caused by unforeseen
+                  circumstances, such as supply chain issues or natural
+                  disasters.
                 </li>
                 <li className="mb-5">
-                  <div className="font-bold">Changes to Terms:</div>We reserve
-                  the right to modify these terms at any time without prior
-                  notice.
+                  <div className=" text-2xl font-bold text-orange-700">
+                    Changes to Terms:
+                  </div>
+                  We reserve the right to modify these terms at any time without
+                  prior notice.
                 </li>
               </ul>
             </div>

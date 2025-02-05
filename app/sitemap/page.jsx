@@ -65,10 +65,10 @@ const Sitemap = () => {
             </li>
             <li>
               <Link
-                href="/services/design-consultancy"
+                href="/services/custom-product-development"
                 className=" hover:underline"
               >
-                Design Consultancy
+                Custom Product Development
               </Link>
             </li>
             <li>

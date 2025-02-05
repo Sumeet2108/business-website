@@ -41,8 +41,8 @@ const Footer = () => {
             </div>
 
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4230.291095493794!2d72.85107896247833!3d19.16196276576265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a93cb59cff%3A0x51db944f3e339549!2sA.K.%20Engineers!5e0!3m2!1sen!2sin!4v1726656935006!5m2!1sen!2sin"
-              className="mt-6 rounded-xl w-full h-[120px] md:h-[145px] border-0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4230.291095493794!2d72.85107896247833!3d19.16196276576265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a93cb59cff%3A0x51db944f3e339549!2sA.K.%20Engineers!5e0!3m2!1sen!2sin!4v1726656935006!5m2!1sen!2sin&output=embed"
+              className="mt-6 rounded-xl w-3/4 h-[120px] md:h-[125px] border-0"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -67,12 +67,9 @@ const Footer = () => {
 
           {/* Right Section: Links */}
           <div className="top-0 w-1/2 md:w-1/5">
-            <p className="text-xs mb-2">
-              demologos(gotta change for prod here #1):
-            </p>
             {/* marquee*/}
             {/* <div>Our Clients:</div> */}
-            <Marquee className="" autoFill="true">
+            {/* <Marquee className="" autoFill="true">
               <FaApple className="ml-4 text-white text-3xl" />
               <FaAndroid className="ml-4 text-white text-3xl" />
               <FaGoogle className="ml-4 text-white text-3xl" />
@@ -80,22 +77,25 @@ const Footer = () => {
               <FaAndroid className="ml-4 text-white text-3xl" />
               <FaGoogle className="ml-4 text-white text-3xl" />
               <FaFacebook className="ml-4 text-white text-3xl" />
-            </Marquee>
+            </Marquee> */}
 
             <div className="flex flex-row gap-8 md:gap-16 text-center mt-6">
               <div className="flex flex-col mb-5">
-                <Link href="/about" className="text-white mb-2 hover:underline">
+                <Link
+                  href="/about"
+                  className="text-white mb-2 hover:underline text-center md:text-left"
+                >
                   About Us
                 </Link>
                 <Link
                   href="/services"
-                  className="text-white mb-2 hover:underline text-left md:text-left"
+                  className="text-white mb-2 hover:underline text-center md:text-left"
                 >
                   Services
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="text-white mb-2 hover:underline"
+                  className="text-white mb-2 hover:underline text-center md:text-left"
                 >
                   Portfolio
                 </Link>

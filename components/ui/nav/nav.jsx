@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`transition-colors duration-300 ease-in-out w-full z-20 fixed top-0 ${
+      className={`transition-colors duration-300 ease-in-out w-full z-50 fixed top-0 ${
         isHomePage // Apply scroll effect only on homepage
           ? isScrolled
             ? "bg-white shadow-lg"
@@ -70,14 +70,20 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-6 ">
             <NavItem
+              title="Home"
+              href="/"
+              isHomePage={isHomePage}
+              isScrolled={isScrolled}
+            />
+            <NavItem
               title="Services"
               href="/services"
               items={[
                 { name: "Mould Trail", href: "/services/mould-trail" },
                 { name: "Mass Production", href: "/services/mass-production" },
                 {
-                  name: "Design Consultancy",
-                  href: "/services/design-consultancy",
+                  name: "Custom Product Development",
+                  href: "/services/custom-product-development",
                 },
                 {
                   name: "Mould Manufacturing",
@@ -163,6 +169,7 @@ const Navbar = () => {
             className="fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 md:hidden"
           >
             <div className="px-2 pt-4 pb-3 space-y-1 sm:px-3">
+              <MobileNavItem title="Home" href="/" />
               <MobileNavItem
                 title="Services"
                 subItems={[
@@ -172,8 +179,8 @@ const Navbar = () => {
                     href: "/services/mass-production",
                   },
                   {
-                    name: "Design consultancy",
-                    href: "/services/design-consultancy",
+                    name: "Custom Product Development",
+                    href: "/services/custom-product-development",
                   },
                   {
                     name: "Mould Manufacturing",
