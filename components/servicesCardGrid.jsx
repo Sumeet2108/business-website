@@ -1,8 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-import React from "react";
-
 const ServicesCardGrid = () => {
   const router = useRouter();
   return (
@@ -20,7 +18,7 @@ const ServicesCardGrid = () => {
               text-3xl
               sm:text-4xl
               md:text-[40px]
-              text-dark
+              text-gray-900
               mb-4
               "
               >
@@ -58,7 +56,7 @@ const ServicesCardGrid = () => {
             </p>
           </div>
 
-          {/* Service 2 */}
+          {/* Card 2 */}
           <div
             className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
             onClick={() => router.push("/services/mass-production")}
@@ -82,7 +80,7 @@ const ServicesCardGrid = () => {
             </p>
           </div>
 
-          {/* Service 3 */}
+          {/* Card 3 */}
           <div
             className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
             onClick={() => router.push("/services/design-consultancy")}
@@ -106,7 +104,7 @@ const ServicesCardGrid = () => {
             </p>
           </div>
 
-          {/* Service 4 */}
+          {/* Card 4 */}
           <div
             className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
             onClick={() => router.push("/services/mould-manufacturing")}
