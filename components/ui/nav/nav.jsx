@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`transition-colors duration-300 ease-in-out w-full z-50 fixed top-0 ${
+      className={`transition-colors duration-300 ease-in-out w-full max-w-[1900px] z-50 fixed top-0 ${
         isHomePage // Apply scroll effect only on homepage
           ? isScrolled
             ? "bg-white shadow-lg"

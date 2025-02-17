@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const DesignPage = () => {
   return (
-    <section className=" mt-16 md:mt-20 mb-12 pb-12  bg-white text-white">
+    <section className=" mt-16 md:mt-18 mb-12 pb-12  bg-white text-white">
       <div className="flex flex-row bg-black gap-0 md:gap-2 ">
-        <div className=" w-1/2  flex flex-col items-start justify-center ml-5 md:ml-10  h-96 md:h-[50vh]">
+        <div className=" w-1/2  flex flex-col items-start justify-center ml-5 md:ml-10  h-96 md:h-[50vh] max-h-96 md:max-h-[720px]">
           <p className=" text-xs md:text-base  text-gray-400 mb-2">
             <Link href="/services">Services</Link> &gt; Custom Product
             Development

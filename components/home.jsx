@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center bg-white max-w-full ">
       <div
-        className=" border-b-[1px] border-white relative w-full h-96 md:h-[75vh]  overflow-hidden custom-cursor"
+        className=" border-b-[1px] border-white relative w-full  h-96 md:h-[75vh]  max-h-96 md:max-h-[720px]  overflow-hidden custom-cursor"
         onClick={() => {
           const targetSection = document.getElementById("target-section");
           if (targetSection) {
@@ -257,38 +257,33 @@ const Home = () => {
           />
         </Carousel>
       </div>
-      <div className="py-8 bg-black  w-full flex flex-col justify-center items-center border-b-[1px] border-white">
-        <h3 className=" text-3xl md:text-5xl font-semibold ">Our Clients</h3>
-        <div className=" md:px-6 my-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-32 items-center ">
-          <div className="">
-            <img
-              src="/assets/images/hifi-logo.jpeg"
-              alt="hifi-electric-logo"
-              className="object-contain w-40 md:w-72"
-            ></img>
-          </div>
 
-          <div>
-            <img
-              src="/assets/images/elleyes-logo.jpg"
-              alt="elleyes-logo "
-              className="object-contain w-40 md:w-72"
-            ></img>
-          </div>
-          <div>
-            <img
-              src="/assets/images/avon-logo.png"
-              alt="avon-logo"
-              className="object-contain w-40 md:w-72"
-            ></img>
-          </div>
-          <div>
-            <img
-              src="/assets/images/profile-solution-logo.png"
-              alt="profile-solutiom-logo"
-              className="object-contain w-40 md:w-72"
-            ></img>
-          </div>
+      <div className="py-2 bg-white  w-full flex flex-col justify-center items-center border-y-[1px] border-black">
+        <h3 className=" text-2xl md:text-4xl font-semibold ">Our Clients</h3>
+        <div className=" px-6 md:px-6 my-2 grid grid-cols-4 gap-8 md:gap-32 items-center ">
+          <img
+            src="/assets/images/hifi-logo.jpeg"
+            alt="hifi-electric-logo"
+            className="object-contain w-20 md:w-40"
+          ></img>
+
+          <img
+            src="/assets/images/elleyes-logo.jpg"
+            alt="elleyes-logo "
+            className="object-contain w-20 md:w-40"
+          ></img>
+
+          <img
+            src="/assets/images/avon-logo.png"
+            alt="avon-logo"
+            className="object-contain w-20 md:w-40"
+          ></img>
+
+          <img
+            src="/assets/images/profile-solution-logo.png"
+            alt="profile-solutiom-logo"
+            className="object-contain w-20 md:w-40"
+          ></img>
         </div>
       </div>
 

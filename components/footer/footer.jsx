@@ -14,8 +14,8 @@ import Marquee from "react-fast-marquee";
 
 const Footer = () => {
   return (
-    <footer className="border-t-[1px] border-white py-10 bg-black">
-      <div className="max-w-6xl mx-auto">
+    <footer className=" w-full border-t-[1px] border-white py-10 bg-black ">
+      <div className="px-32 mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Left Section: Address and Email */}
           <div className="flex flex-col items-center md:items-start">
