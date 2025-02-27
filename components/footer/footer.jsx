@@ -66,7 +66,7 @@ const Footer = () => {
           </a>
 
           {/* Right Section: Links */}
-          <div className="top-0 w-1/2 md:w-1/5">
+          <div className="top-0 w-full md:w-1/5 ">
             {/* marquee*/}
             {/* <div>Our Clients:</div> */}
             {/* <Marquee className="" autoFill="true">

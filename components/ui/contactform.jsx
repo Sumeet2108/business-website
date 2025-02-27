@@ -26,6 +26,7 @@ const Contactform = () => {
   }, []);
 
   const onSubmit = async (formData) => {
+    console.log("Form Data Submitted:", formData);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -48,14 +49,14 @@ const Contactform = () => {
   };
 
   return (
-    <div className=" max-w-full  grid sm:grid-cols-2 items-start gap-16 px-10 md:px-52 py-10 md:py-20 mx-auto bg-black font-[sans-serif]">
+    <div className=" max-w-full   grid sm:grid-cols-2 items-start gap-16 px-10 md:px-52 py-10 md:py-20 mx-auto bg-black font-[sans-serif]">
       <div>
-        <h1 className="text-[#FFA500] text-3xl font-extrabold">
+        <h1 className="text-[#FFA500] text-3xl font-semibold">
           Let&apos;s Talk
         </h1>
         <p className="text-sm text-white mt-4">
-          Have / want any design ideas and want to develop and need help? Then
-          reach out we&apos;d love to hear about your project and provide help.
+          Send us your enquiries stating your requirements our team will get
+          back to you soon!
         </p>
         <div>
           <div className="mt-6">
@@ -160,7 +161,7 @@ const Contactform = () => {
           id="company"
           name="company"
           type="text"
-          placeholder="Company name (optional)"
+          placeholder="Company name"
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
           {...register("company")}
         />
@@ -174,12 +175,12 @@ const Contactform = () => {
         />
         <div>
           <textarea
-            id="message"
-            name="message"
+            id="description"
+            name="description"
             placeholder="Message"
             rows="1" // Set to 1 initially, will resize dynamically
             className="resize-none w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-[#FFA500] focus:bg-white min-h-[45px]"
-            {...register("description", { required: "Message is required" })}
+            {...register("description", { required: "message is required" })}
             ref={textareaRef} // Add the reference to the textarea
             onInput={handleResize} // Call the resize function on input
           ></textarea>

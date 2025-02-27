@@ -258,8 +258,10 @@ const Home = () => {
         </Carousel>
       </div>
 
-      <div className="py-2 bg-white  w-full flex flex-col justify-center items-center border-y-[1px] border-black">
-        <h3 className=" text-2xl md:text-4xl font-semibold ">Our Clients</h3>
+      <div className="pb-2 pt-4 bg-white  w-full flex flex-col justify-center items-center border-y-[1px] border-black">
+        <h3 className=" text-2xl md:text-4xl font-semibold ">
+          Our Trusted Clients
+        </h3>
         <div className=" px-6 md:px-6 my-2 grid grid-cols-4 gap-8 md:gap-32 items-center ">
           <img
             src="/assets/images/hifi-logo.jpeg"
@@ -287,7 +289,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
+      <div className="w-full">
         <Contactform />
       </div>
       {/* <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
