@@ -17,9 +17,9 @@ export async function POST(req) {
     const mailOptions = {
       from: process.env.EMAIL_FROM,
       to: process.env.RECIPIENT_EMAIL,
-      subject: `New Support Request from ${name}`,
+      subject: ` AK Enginners New Message from ${name}`,
       text: `
-        You have received a new support request.
+        You have received a new message from a client.
 
         Name: ${name}
         Email: ${email}

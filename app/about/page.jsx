@@ -19,7 +19,7 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
 
           {/* Overlay text and button centered on the image */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+          <div className=" px-6 absolute inset-0 flex flex-col items-center justify-center text-center text-white">
             {/* Text */}
             <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold">
               25 years of Plastic Injection Moulding Expertise
@@ -161,11 +161,10 @@ const AboutPage = () => {
 
         {/* Image Below Grid */}
         <div className="mt-8 mb-8">
-          <img
-            alt="building"
-            src="/assets/images/building.png"
-            className="w-full rounded-xl object-cover"
-          />
+          <video className="w-full rounded-xl " autoPlay loop muted playsInline>
+            <source src="/assets/vids/homepage_vid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>

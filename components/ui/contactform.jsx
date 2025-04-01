@@ -180,7 +180,7 @@ const Contactform = () => {
             placeholder="Message"
             rows="1" // Set to 1 initially, will resize dynamically
             className="resize-none w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-[#FFA500] focus:bg-white min-h-[45px]"
-            {...register("description", { required: "message is required" })}
+            {...register("description")}
             ref={textareaRef} // Add the reference to the textarea
             onInput={handleResize} // Call the resize function on input
           ></textarea>

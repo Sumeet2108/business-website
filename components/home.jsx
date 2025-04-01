@@ -29,7 +29,7 @@ const Home = () => {
           muted
           playsInline
         >
-          <source src="/assets/vids/cnc.mp4" type="video/mp4" />
+          <source src="/assets/vids/homepage_vid.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className=" md:px-14  ml-6 relative z-10 flex items-center justify-start h-full text-white">
