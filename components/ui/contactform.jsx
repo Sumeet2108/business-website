@@ -49,7 +49,7 @@ const Contactform = () => {
   };
 
   return (
-    <div className=" max-w-full   grid sm:grid-cols-2 items-start gap-16 px-10 md:px-52 py-10 md:py-20 mx-auto bg-black font-[sans-serif]">
+    <div className=" max-w-full grid sm:grid-cols-2 items-start gap-16 px-10 md:px-52 py-10 md:py-20 mx-auto bg-black font-[sans-serif]">
       <div>
         <h1 className="text-[#FFA500] text-3xl font-semibold">
           Let&apos;s Talk

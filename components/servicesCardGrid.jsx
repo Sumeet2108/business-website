@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { ArrowRightCircle } from "lucide-react";
 
 const ServicesCardGrid = () => {
   const router = useRouter();
@@ -31,10 +32,11 @@ const ServicesCardGrid = () => {
             </div>
           </div>
         </div>
+
         <div className=" p-5 grid grid-cols-2 md:grid-cols-4  gap-4 md:gap-8 mb-10">
           {/* Card 1 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
+            className="group relative cursor-pointer p-4 md:p-8 rounded-2xl bg-white border border-orange-200 hover:border-orange-bg-orange-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/mould-trail")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
@@ -47,7 +49,7 @@ const ServicesCardGrid = () => {
                 <path d="M356-120H180q-24 0-42-18t-18-42v-176q44-5 75.5-34.5T227-463q0-43-31.5-72.5T120-570v-176q0-24 18-42t42-18h177q11-40 39.5-67t68.5-27q40 0 68.5 27t39.5 67h173q24 0 42 18t18 42v173q40 11 65.5 41.5T897-461q0 40-25.5 67T806-356v176q0 24-18 42t-42 18H570q-5-48-35.5-77.5T463-227q-41 0-71.5 29.5T356-120Zm-176-60h130q25-61 69.89-84t83-23Q501-287 546-264t70 84h130v-235h45q20 0 33-13t13-33q0-20-13-33t-33-13h-45v-239H511v-48q0-20-13-33t-33-13q-20 0-33 13t-13 33v48H180v130q48.15 17.82 77.58 59.69Q287-514.45 287-462.78 287-412 257.5-370T180-310v130Zm285-281Z" />
               </svg>
             </div>
-            <h4 className="font-semibold text-xl text-dark mb-3 ">
+            <h4 className="font-semibold text-xl text-dark mb-3">
               Mould Trial&gt;
             </h4>
             <p className="text-gray-900  text-sm md:text-base">
@@ -58,7 +60,7 @@ const ServicesCardGrid = () => {
 
           {/* Card 2 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
+            className="group relative cursor-pointer p-4 md:p-8 rounded-2xl bg-white border border-orange-200 hover:border-orange-bg-orange-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/mass-production")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
@@ -82,7 +84,7 @@ const ServicesCardGrid = () => {
 
           {/* Card 3 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
+            className="group relative cursor-pointer p-4 md:p-8 rounded-2xl bg-white border border-orange-200 hover:border-orange-bg-orange-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/custom-product-development")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
@@ -106,7 +108,7 @@ const ServicesCardGrid = () => {
 
           {/* Card 4 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg"
+            className="group relative cursor-pointer p-4 md:p-8 rounded-2xl bg-white border border-orange-200 hover:border-orange-bg-orange-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/mould-manufacturing")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">

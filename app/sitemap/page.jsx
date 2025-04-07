@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Sitemap = () => {
   return (
-    <div className="container mx-auto px-6 py-12 bg-[#0A0A0A] text-white mt-16">
+    <div className=" mx-auto px-6 py-12 bg-[#0A0A0A] text-white mt-16">
       <h1 className="text-4xl font-extrabold text-center mb-8 text-[#FFA500]">
         Sitemap
       </h1>

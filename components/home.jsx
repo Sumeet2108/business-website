@@ -45,9 +45,9 @@ const Home = () => {
         <div id="target-section"></div>
       </div>
 
-      <div className="h-full px-2 md:px-14">
+      <div className=" h-full px-2 md:px-14">
         {/* Services Main div */}
-        <div className="mt-4 w-full text-gray-900 font-medium text-3xl md:text-5xl p-5 text-center md:text-left">
+        <div className="  mt-4 w-full text-gray-900 font-medium text-3xl md:text-5xl p-5 text-center md:text-left">
           Our Services:
         </div>
 
@@ -55,7 +55,7 @@ const Home = () => {
         <div className=" p-2 md:p-5 grid grid-cols-2 md:grid-cols-4  gap-2 md:gap-8 ">
           {/* Card 1 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] border-[2px] bg-white shadow-md hover:shadow-lg"
+            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/mould-trail")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
@@ -79,7 +79,7 @@ const Home = () => {
 
           {/* Card 2 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] border-[2px] bg-white shadow-md hover:shadow-lg"
+            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/mass-production")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
@@ -103,7 +103,7 @@ const Home = () => {
 
           {/* Card 3 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] border-[2px] bg-white shadow-md hover:shadow-lg"
+            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/custom-product-development")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
@@ -127,7 +127,7 @@ const Home = () => {
 
           {/* Card 4 */}
           <div
-            className="cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] border-[2px] bg-white shadow-md hover:shadow-lg"
+            className=" border-[1px] border-orange-500 border-opacity-30 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white  group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
             onClick={() => router.push("/services/mould-manufacturing")}
           >
             <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
