@@ -1,6 +1,5 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { ArrowRightCircle } from "lucide-react";
 
 const ServicesCardGrid = () => {
   const router = useRouter();
