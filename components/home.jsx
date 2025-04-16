@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
 import Contactform from "@/components/ui/contactform";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,8 +9,12 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import ServicesCardGrid from "./servicesCardGrid";
 import { useRouter } from "next/navigation";
 
+import dynamic from "next/dynamic";
+const HeroVideo = dynamic(() => import("./videocontainer"), { ssr: false });
+
 const Home = () => {
   const router = useRouter();
+
   return (
     <div className="flex flex-col items-center bg-white max-w-full ">
       <div
@@ -22,16 +26,7 @@ const Home = () => {
           }
         }}
       >
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/assets/vids/homepage_vid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <HeroVideo />
         <div className=" md:px-14  ml-6 relative z-10 flex items-center justify-start h-full text-white">
           <h1 className="text-3xl md:text-7xl font-bold ">
             <div className="mb-6">
