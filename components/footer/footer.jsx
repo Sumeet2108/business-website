@@ -134,10 +134,10 @@ const Footer = () => {
         {/* Copyright and GST */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-white text-center md:text-left">
-            &copy; AK Engineers
+            &copy; AK Engineers. All rights reserved
           </div>
           <div className="text-sm text-white text-center md:text-right">
-            GST No: 1234567890 (change in prod #2)
+            GST No: 27BCXPS8915E1ZT
           </div>
         </div>
       </div>
