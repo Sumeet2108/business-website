@@ -2,7 +2,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className=" bg-white px-5 md:px-16 flex flex-col mt-16 h-full w-full gap-16">
+    <div className=" bg-gray-100 px-5 md:px-16 flex flex-col mt-16 h-full w-full gap-16">
       <div className="pt-20 lg:pt-16 pb-12 lg:pb-12 h-full">
         <div className="p-5 text-center text-5xl font-semibold ">
           <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
