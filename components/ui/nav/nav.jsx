@@ -278,7 +278,8 @@ const NavItem = ({ title, items, href, isHomePage, isScrolled }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {items ? (
-        <button
+        <Link
+          href={href || "#"}
           aria-haspopup="true"
           aria-expanded={isHovered}
           className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -288,7 +289,7 @@ const NavItem = ({ title, items, href, isHomePage, isScrolled }) => {
           }`}
         >
           {title}
-        </button>
+        </Link>
       ) : (
         <Link
           href={href}
