@@ -165,14 +165,28 @@ const Contactform = () => {
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
           {...register("company")}
         />
+
         <input
           id="phone_no"
           name="Phone_no"
           type="tel"
           placeholder="Phone number"
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
-          {...register("phone_no", { required: "Phone no. is required" })}
+          maxLength={10}
+          {...register("phone_no", {
+            required: "Phone no. is required",
+            pattern: {
+              value: /^\d{10}$/,
+              message: "Phone number must be 10 digits and only numbers",
+            },
+          })}
         />
+
+        {/* Error Message */}
+        {errors.phone_no && (
+          <p className="text-red-500 text-xs">{errors.phone_no.message}</p>
+        )}
+
         <div>
           <textarea
             id="description"

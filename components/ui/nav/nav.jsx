@@ -277,29 +277,29 @@ const NavItem = ({ title, items, href, isHomePage, isScrolled }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {isClickable ? (
+      {items ? (
+        <button
+          aria-haspopup="true"
+          aria-expanded={isHovered}
+          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            isHomePage && !isScrolled ? "text-white" : "text-gray-700"
+          } hover:bg-orange-600 hover:text-white ${
+            !href ? "cursor-default" : "cursor-pointer"
+          }`}
+        >
+          {title}
+        </button>
+      ) : (
         <Link
-          href={href || "#"}
-          className={`${
-            isHomePage && !isScrolled
-              ? "text-white" // Make text white on the homepage when not scrolled
-              : "text-gray-700"
-          } px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-            title === "Contact Us"
-              ? "hover:bg-orange-500 hover:text-white"
-              : "hover:bg-black hover:text-white"
-          } ${isHomePage && !isScrolled ? "hover:bg-transparent" : ""}`}
+          href={href}
+          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            isHomePage && !isScrolled ? "text-white" : "text-gray-700"
+          } hover:bg-orange-600 hover:text-white ${
+            !href ? "cursor-default" : "cursor-pointer"
+          }`}
         >
           {title}
         </Link>
-      ) : (
-        <span
-          className={`${
-            isHomePage && !isScrolled ? "text-white" : "text-gray-700"
-          } px-3 py-2 rounded-md text-sm font-medium`}
-        >
-          {title}
-        </span>
       )}
       <AnimatePresence>
         {isHovered && items && (
