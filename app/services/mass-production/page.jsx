@@ -14,7 +14,10 @@ const MassProd = () => {
           <h1 className="text-3xl md:text-7xl font-bold  text-white mb-5">
             Mass Production
           </h1>
-          <p className="text-base  sm:text-xl  text-gray-300 ">sample desc</p>
+          <p className="text-base  sm:text-xl  text-gray-300 ">
+            Support capability from small scale batch production to multi-
+            thousands mass production units to suite your requirements.
+          </p>
         </div>
         <div className="w-1/2 relative">
           <img
