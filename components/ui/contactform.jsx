@@ -107,7 +107,10 @@ const Contactform = () => {
                     </svg>
                   </a>
                 </div>
-                <a href="linkedin.com" className="text-[#FFA500] text-md ml-4">
+                <a
+                  href="https://www.linkedin.com/in/a-k-engineers-432a84364/"
+                  className="text-[#FFA500] text-md ml-4"
+                >
                   <small className="block">LinkedIn</small>
                   <strong className=" text-sm md:text-base text-white">
                     A.K. Engineers
