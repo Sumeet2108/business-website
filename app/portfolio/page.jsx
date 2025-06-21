@@ -135,7 +135,7 @@ const CompletedProjects = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-cloudGray/10 via-white to-white px-5 md:px-16 flex flex-col mt-16 h-full w-full gap-16">
+    <div className="bg-gradient-to-b from-gray-400/10 via-white to-white px-5 md:px-16 flex flex-col mt-16 h-full w-full gap-16">
       <div className="pt-20 lg:pt-16 pb-12 lg:pb-12 h-full">
         <motion.div
           className="p-5 text-center"
