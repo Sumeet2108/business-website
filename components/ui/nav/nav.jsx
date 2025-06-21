@@ -188,13 +188,7 @@ const Navbar = () => {
                   },
                 ]}
               />
-              <MobileNavItem
-                title="Portfolio"
-                subItems={[
-                  { name: "A Project", href: "/portfolio/a-project" },
-                  { name: "B Project", href: "/portfolio/b-project" },
-                ]}
-              />
+              <MobileNavItem title="Portfolio" href="/portfolio" />
               <MobileNavItem title="About Us" href="/about" />
               <MobileNavItem title="Contact Us" href="/contact-us" />
             </div>

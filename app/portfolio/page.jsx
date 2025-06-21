@@ -32,7 +32,7 @@ const ProjectCard = ({ project, index, controls }) => {
       }`}
     >
       <div className="w-full lg:w-1/2 h-full">
-        <Parallax speed={isEven ? -8 : 8}>
+        <Parallax speed={8}>
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -135,7 +135,7 @@ const CompletedProjects = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-400/10 via-white to-white px-5 md:px-16 flex flex-col mt-16 h-full w-full gap-16">
+    <div className="bg-gradient-to-b from-gray-400/10 via-white to-white px-5 md:px-16 flex flex-col mt-4 md:mt-16 h-full w-full gap-16">
       <div className="pt-20 lg:pt-16 pb-12 lg:pb-12 h-full">
         <motion.div
           className="p-5 text-center"
@@ -153,7 +153,7 @@ const CompletedProjects = () => {
               Portfolio
             </motion.span>
             <motion.h2
-              className="font-bold text-lg text-orange-600 sm:text-4xl md:text-[40px] mb-4"
+              className="font-bold  text-orange-600 text-4xl md:text-[40px] mb-1 md:mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
