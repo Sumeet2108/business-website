@@ -173,84 +173,150 @@ const Home = () => {
         </Link>
       </div> */}
 
-      <div className=" w-full h-500 md:h-[800px] mt-4  ">
-        <Carousel
-          autoplay="true"
-          prevArrow={({ handlePrev }) => (
-            <IconButton
-              variant="text"
-              color="white"
-              size="lg"
-              onClick={handlePrev}
-              className=" invisible md:visible !absolute top-2/4 left-14 -translate-y-2/4 bg-[#FFA500] hover:bg-orange-700"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-6 w-6"
+      <div className=" border-t-2 w-full mt-4 bg-slate-50  overflow-hidden py-6 md:py-12  px-4 md:px-8">
+        {/* --- Styled Section Header --- */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl text-orange-500 font-bold text-slate-800 tracking-tight">
+            Our Projects
+          </h2>
+          <p className="mt-3 text-md md:text-lg text-slate-600 max-w-2xl mx-auto">
+            A showcase of our expertise in precision moulding and manufacturing.
+          </p>
+        </div>
+
+        {/* --- Carousel Wrapper: Adds shadow and defines the carousel's height and shape --- */}
+        <div className="h-[550px] md:h-[600px] w-full ">
+          <Carousel
+            autoplay={true}
+            loop={true}
+            prevArrow={({ handlePrev }) => (
+              <IconButton
+                variant="text"
+                color="white"
+                size="lg"
+                onClick={handlePrev}
+                className="!absolute top-2/4 left-4 md:left-8 -translate-y-2/4 z-10 bg-black/30 hover:bg-black/50 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                />
-              </svg>
-            </IconButton>
-          )}
-          nextArrow={({ handleNext }) => (
-            <IconButton
-              variant="text"
-              color="white"
-              size="lg"
-              onClick={handleNext}
-              className=" invisible md:visible !absolute top-2/4 !right-14 -translate-y-2/4 bg-[#FFA500] hover:bg-orange-700"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-6 w-6"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                  />
+                </svg>
+              </IconButton>
+            )}
+            nextArrow={({ handleNext }) => (
+              <IconButton
+                variant="text"
+                color="white"
+                size="lg"
+                onClick={handleNext}
+                className="!absolute top-2/4 !right-4 md:!right-8 -translate-y-2/4 z-10 bg-black/30 hover:bg-black/50 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </IconButton>
+            )}
+            navigation={({ setActiveIndex, activeIndex, length }) => (
+              <div className="absolute bottom-6 left-2/4 z-20 flex -translate-x-2/4 gap-2">
+                {new Array(length).fill("").map((_, i) => (
+                  <span
+                    key={i}
+                    className={`block h-1.5 cursor-pointer rounded-full transition-all content-[''] ${
+                      activeIndex === i
+                        ? "w-8 bg-orange-500"
+                        : "w-4 bg-gray-400/80"
+                    }`}
+                    onClick={() => setActiveIndex(i)}
+                  />
+                ))}
+              </div>
+            )}
+          >
+            {/* Slide 1 */}
+            <div className=" rounded-lg border-[1px] border-orange-400 shadow-lg relative flex flex-col md:flex-row items-center w-full h-full bg-white group">
+              <div className="w-full md:w-1/2 h-80 md:h-full overflow-hidden p-4 md:p-8">
+                <img
+                  src="/assets/images/box1.jpeg"
+                  alt="enclosure"
+                  className="rounded-xl w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
                 />
-              </svg>
-            </IconButton>
-          )}
-          loop="true"
-          className=""
-          navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute bottom-4 left-2/4 z-20 flex -translate-x-2/4 gap-2">
-              {new Array(length).fill("").map((_, i) => (
-                <span
-                  key={i}
-                  className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                    activeIndex === i ? "w-8 bg-orange-800" : "w-4 bg-white/50"
-                  }`}
-                  onClick={() => setActiveIndex(i)}
-                />
-              ))}
+              </div>
+              <div className="w-full md:w-1/2 p-8 lg:p-16 flex flex-col justify-center items-start text-left">
+                <h2 className="text-xl md:text-4xl font-bold text-slate-800 tracking-tight mb-4">
+                  Enclosure Box
+                </h2>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                  A two-part moulded enclosure with seamless alignment and
+                  durability. We applied Design for Manufacturing (DFM)
+                  principles to ensure optimal moldability and a perfect fit.
+                </p>
+              </div>
             </div>
-          )}
-        >
-          <img
-            src="/assets/images/index_deskorganizer.png"
-            alt=" desk organizer"
-            className="h-full w-full object-cover"
-          />
-          <img
-            src="/assets/images/designformanufac.png"
-            alt=" design for manufacture"
-            className="h-full w-full object-cover"
-          />
-        </Carousel>
+
+            {/* Slide 2 */}
+            <div className="rounded-lg border-[1px] border-orange-400 shadow-lg relative flex flex-col md:flex-row-reverse items-center w-full h-full bg-white group">
+              <div className="w-full md:w-1/2 h-80 md:h-full overflow-hidden p-4 md:p-8">
+                <img
+                  src="/assets/images/glassbreakercombo.jpg"
+                  alt="glassbreaker"
+                  className="rounded-xl w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
+                />
+              </div>
+              <div className="w-full md:w-1/2 p-8 lg:p-16 flex flex-col justify-center items-start text-left">
+                <h2 className="text-xl md:text-4xl font-bold text-slate-800 tracking-tight mb-4">
+                  Glass Break Device
+                </h2>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                  This critical emergency-use product required expert insert
+                  moulding to guarantee performance and user safety, combining
+                  function with a sleek, purpose-driven design.
+                </p>
+              </div>
+            </div>
+
+            {/* Slide 3 */}
+            <div className="rounded-lg border-[1px] border-orange-400 shadow-lg relative flex flex-col md:flex-row items-center w-full h-full bg-white group">
+              <div className="w-full md:w-1/2 h-80 md:h-full overflow-hidden p-4 md:p-8">
+                <img
+                  src="/assets/images/holder.jpeg"
+                  alt="enclosure"
+                  className="rounded-xl w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
+                />
+              </div>
+              <div className="w-full md:w-1/2 p-8 lg:p-16 flex flex-col justify-center items-start text-left">
+                <h2 className="text-xl md:text-4xl font-bold text-slate-800 tracking-tight mb-4">
+                  Holder
+                </h2>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                  Using cost-effective materials and precision injection
+                  moulding, we delivered a durable and user-safe holder that met
+                  strict functional requirements.
+                </p>
+              </div>
+            </div>
+          </Carousel>
+        </div>
       </div>
 
       <div className="pb-2 pt-4 bg-white  w-full flex flex-col justify-center items-center border-y-[1px] border-black">

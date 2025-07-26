@@ -70,32 +70,29 @@ const Footer = () => {
             {/* marquee*/}
             {/* <div>Our Clients:</div> */}
             {/* <Marquee className="" autoFill="true">
-              <FaApple className="ml-4 text-white text-3xl" />
-              <FaAndroid className="ml-4 text-white text-3xl" />
-              <FaGoogle className="ml-4 text-white text-3xl" />
-              <FaFacebook className="ml-4 text-white text-3xl" />
-              <FaAndroid className="ml-4 text-white text-3xl" />
-              <FaGoogle className="ml-4 text-white text-3xl" />
-              <FaFacebook className="ml-4 text-white text-3xl" />
-            </Marquee> */}
+              <FaApple className="ml-4 text-white text-3xl" />
+              <FaAndroid className="ml-4 text-white text-3xl" />
+              <FaGoogle className="ml-4 text-white text-3xl" />
+              <FaFacebook className="ml-4 text-white text-3xl" />
+              <FaAndroid className="ml-4 text-white text-3xl" />
+              <FaGoogle className="ml-4 text-white text-3xl" />
+              <FaFacebook className="ml-4 text-white text-3xl" />
+            </Marquee> */}
 
-            <div className="flex flex-row gap-8 md:gap-16 text-center mt-6">
-              <div className="flex flex-col mb-5">
-                <Link
-                  href="/about"
-                  className="text-white mb-2 hover:underline text-center md:text-left"
-                >
+            <div className="flex flex-row justify-center gap-8 md:gap-16 mt-6">
+              <div className="flex flex-col mb-5 text-left">
+                <Link href="/about" className="text-white mb-2 hover:underline">
                   About Us
                 </Link>
                 <Link
                   href="/services"
-                  className="text-white mb-2 hover:underline text-center md:text-left"
+                  className="text-white mb-2 hover:underline"
                 >
                   Services
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="text-white mb-2 hover:underline text-center md:text-left"
+                  className="text-white mb-2 hover:underline"
                 >
                   Portfolio
                 </Link>
@@ -104,7 +101,7 @@ const Footer = () => {
                 </Link>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <Link
                   href="/sitemap"
                   className="text-white mb-2 hover:underline"
